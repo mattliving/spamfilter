@@ -1,0 +1,19 @@
+SETUP javac *.java
+
+TEST java filter sampletrain sampletest/1.txt
+OUT spam
+//ln(Likelihood(ham)) - ln(likelihood(spam)) = -0.223
+
+TEST java filter sampletrain sampletest/2.txt
+OUT ham
+//ln(Likelihood(ham)) - ln(likelihood(spam)) = 2.61
+
+TEST java filter train3cool test3cool/1.txt
+OUT ham
+//ln(Likelihood(ham)) - ln(likelihood(spam)) = 0.693
+
+TEST java filter train3cool test3cool/2.txt
+OUT ham
+//ln(Likelihood(ham)) - ln(likelihood(spam)) = 0.693
+
+TOTAL
